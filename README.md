@@ -37,7 +37,7 @@ uploading new code:
 
 install rshell with >pip install rshell
 
-Important! To programm the board, power must be connected to the pcb!
+Important! To programm the board, power must be connected to the pcb! 5V from USB is not connected internally!
 
 connect to board with >rshell -p PORT
 
