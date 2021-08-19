@@ -24,7 +24,7 @@ flipMirror() is a method to rotate the motor 90° in alternating directions
 a "direction" variable can be declared globally if the starting direction should not be 0 but 1
 
 
-getFreq() method reads a "freq.txt" file in the same directory as the directory as the "boot.py" file.
+getFreq() method reads a "freq.txt" file in the same directory as the "boot.py" file.
 it expects an integer to set the time between the motor turning in seconds and returns that integer
 if that file is not existing or its contents cannot be converted to an integer, the method will return the default value 30
 
@@ -36,21 +36,29 @@ then a timer is declared and initialized, it calls the flipMirror() method every
 uploading new code:
 
 install rshell with >pip install rshell
-connect to board with >rshell -p PORT               # PORT being the serial port on which the ESP32 is connected, check device manager if not sure
-upload code with >cp boot.py /pyboard/boot.py       # navigate to directory where code is saved first
+
+connect to board with >rshell -p PORT
+
+upload code with >cp /PATH/boot.py /pyboard/boot.py
+
 to enter python prompt enter >repl
+
 reset the board after uploading new code
 
 
 
 troubleshooting:
 
-if board is bricked and connecting via rshell is not possible \n
-connect to board using serial tool
+if board is bricked and connecting via rshell is not possible
+connect to board using serial tool and
 rename the boot.py file with the following commands:
->uos.rename("boot.py", "temp_boot.py")
+
+uos.rename("boot.py", "temp_boot.py")
+
 or delete the file entirely
->uos.rm("boot.py")
+
+uos.rm("boot.py")
+
 then reset the board and upload new code
 
 
