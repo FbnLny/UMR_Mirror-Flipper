@@ -65,7 +65,9 @@ def driverWake():
   time.sleep_ms(3)
   
 def flipMirror(self):
-  global direction
+  if "direction" not in globals():
+    global direction
+    direction = 0
   for i in range(200):
     moveStep(direction)
     time.sleep_ms(10)
@@ -81,14 +83,11 @@ def getFreq():
   except:
     print("Error: could not get frequency. freq.txt file missing or corrupted?")
     return 30
-	
-direction = 0
-freq = getFreq() * 1000
 
 
 
 tim0 = Timer(0)
-tim0.init(period=freq, mode=Timer.PERIODIC, callback=flipMirror)
+tim0.init(period = getFreq() * 1000, mode = Timer.PERIODIC, callback = flipMirror)
 
 #try:
 #  while True:
