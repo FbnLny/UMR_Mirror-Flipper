@@ -75,8 +75,12 @@ def flipMirror(self):
     direction = 0
 	
 def getFreq():
-  f = open("freq.txt", "r")
-  return int(f.read())
+  try:
+    f = open("freq.txt", "r")
+    return int(f.read())
+  except:
+    print("Error: could not get frequency. freq.txt file missing or corrupted?")
+    return 30
 	
 direction = 0
 freq = getFreq() * 1000
