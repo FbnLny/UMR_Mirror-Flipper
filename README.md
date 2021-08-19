@@ -37,6 +37,8 @@ uploading new code:
 
 install rshell with >pip install rshell
 
+Important! To programm the board, power must be connected to the pcb!
+
 connect to board with >rshell -p PORT
 
 upload code with >cp /PATH/boot.py /pyboard/boot.py
