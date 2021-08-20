@@ -71,10 +71,7 @@ def flipMirror(self):
   for i in range(200):
     moveStep(direction)
     time.sleep_ms(10)
-  if direction == 0:
-    direction = 1
-  else:
-    direction = 0
+  direction ^= 1
 	
 def getFreq():
   try:
