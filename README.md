@@ -52,8 +52,8 @@ reset the board after uploading new code
 troubleshooting:
 
 if board is bricked and connecting via rshell is not possible
-connect to board using serial tool and
-rename the boot.py file with the following commands:
+connect to board using serial tool, send the board the value 0x3, this interrupts the running programm, 
+then rename the boot.py file with the following commands:
 
 uos.rename("boot.py", "temp_boot.py")
 
